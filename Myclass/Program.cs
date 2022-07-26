@@ -6,23 +6,60 @@ namespace Myclass
     {
         static void Main(string[] args)
         {
-            Makushenko avatar = new Makushenko();
-            avatar.Can();
+            string name = "Vlad";
+            string sourname = "Makushenko";
+            Makushenko myInformation = new Makushenko(name,sourname);
+            myInformation.Can(name);
+
+            
+            
+            Console.ReadKey();
 
         }
     }
     class Makushenko
     {
-        string name;
-        string sourname;
-        int old;
+
+        
+        int age;
         float weight;
 
-        public void Can()
+
+        public Makushenko( string sourname)
         {
+            if ( sourname == "Makushenko")
+            {
+                age = 22;
+                weight = 85;
+            }
+            else { Console.WriteLine("information  is not available"); }
+        }
+
+        public Makushenko (string name,string sourname)
+             :this( sourname)
+        {
+            Console.WriteLine("information about me");
             Console.WriteLine($"name : {name}");
             Console.WriteLine($"sourname : {sourname}");
-            Console.WriteLine($"")
+            Console.WriteLine($"age : {age}");
+            Console.WriteLine($"weight : {weight}");
+            
+            
+
+
         }
+        public void Can(string name)
+        {
+            if (name == "Vlad" )
+            {
+                Console.WriteLine("I live in Cherkasy");
+                Console.WriteLine("I'm learning programming");
+            }
+            else { Console.WriteLine("information  is not available") ; }
+
+        }
+
+
+
     }
 }
